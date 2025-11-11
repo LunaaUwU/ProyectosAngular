@@ -1,0 +1,15 @@
+<h3>Datos de la API</h3>
+
+@if (dataService.posts().length > 0) {
+  
+  <h4>Primeros 10 posts:</h4>
+  
+  @for (post of dataService.posts(); track post.id) {
+    <div>
+      <p><b>{{ post.id }} - {{ post.title }}</b></p>
+    </div>
+  }
+
+} @else {
+  <p>Cargando posts...</p>
+}
