@@ -1,17 +1,27 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Removed leading '/' to apply recursively to all Angular projects
+dist/
+tmp/
+out-tsc/
+bazel-out/
+coverage/
+*.tsbuildinfo
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# Removed leading '/' to apply recursively
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+connect.lock
+libpeerconnection.log
+testem.log
+typings/
 
 # IDEs and editors
+# These patterns were already recursive and are correct
 .idea/
 .project
 .classpath
@@ -21,36 +31,20 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
+# These patterns will apply to any .vscode folder in any subdirectory
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
+.history/
 
 # Miscellaneous
-/.angular/cache
+# Removed leading '/'
+.angular/
 .sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
 
 # System files
+# These apply recursively
 .DS_Store
 Thumbs.db
-
-/node_modules
-/dist
-/out-tsc
-/coverage
-/.angular
-/.idea
-/.vscode
-.DS_Store
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-/tmp
-/*.tsbuildinfo
