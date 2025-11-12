@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Email:
+        <input type="email" formControlName="email">
+    </label>
+    <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+        <small>Introduce un email válido.</small>
+    </div>
+    <label>Ciudad:
+        <input type="text" formControlName="city">
+    </label>
+    <div *ngIf="form.get('city')?.touched && form.get('city')?.invalid">
+        <small>Debe tener al menos 3 caracteres.</small>
+    </div>
+    <label>
+        <input type="checkbox" formControlName="acceptPolicy">
+        Acepto la política de privacidad
+    </label>
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>
