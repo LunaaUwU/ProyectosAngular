@@ -3,7 +3,9 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 
 export const routes: Routes = [
-  { path: '', component: ChildComponent },
+  {path: '', redirectTo: 'parent', pathMatch: 'full'},
+  
+  { path: 'child', component: ChildComponent },
 
-  // { path: 'parent', component: ParentComponent },
+  { path: 'parent', component: ParentComponent },
 ];
