@@ -17,13 +17,11 @@ export class DataApiService {
   private http = inject(HttpClient);
   private baseUrl: string = "https://jsonplaceholder.typicode.com/posts";
 
-  private posts$ = this.http.get<Post[]>(this.baseUrl).pipe(
-    map(posts => posts.slice(0, 10))
+  public posts = toSignal(
+    this.http.get<Post[]>(this.baseUrl).pipe(
+      map(posts => posts.slice(0, 10))
+    ), 
+    { initialValue: [] as Post[] }
   );
-
-  public posts = toSignal(this.posts$,
-  { 
-    initialValue: [] as Post[]
-  });
 
 }
